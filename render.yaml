@@ -2,15 +2,15 @@ services:
   - type: web
     name: metabase
     env: docker
-    repo: https://github.com/render-examples/metabase.git # optional
+    repo: https://github.com/wenibble/render-metabase.git # optional
     plan: standard # ensure that metabase has at least 2GB of RAM (defaults to starter)
     autoDeploy: false
     envVars:
       - key: MB_DB_CONNECTION_URI
         fromDatabase:
-          name: elephant
+          name: jolibase
           property: connectionString
 databases:
-  - name: elephant
-    databaseName: metabasedb
+  - name: jolibase
+    databaseName: joli_metabase
     ipAllowList: [] # only allow internal connections
